@@ -1,0 +1,97 @@
+{% extends 'layouts/layout.html' %}
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid products-update">
+            
+    <div class="products-update-form">
+        <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %} 
+            <div class="product-update-img">
+                {% load static %}<img class="img-profile-update" src="{% static '' %}{{img}}" id="img" name="img" for="foto">
+                <label for="foto" class="profile-foto-file">Cambiar foto</label>
+            </div>            
+            <div class="product-update-info">                 
+                <h1>Modificar producto</h1>
+                <hr></hr>
+                <div class="container-fluid product-update-info-container">             
+                        <div class="mb-3">
+                            <label class="form-label">Nombre:</label>
+                            <input type="user" class="form-control" id="product_name" name="product_name" value="{{name}}" required>      
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Precio:</label>
+                            <input type="number" class="form-control" id="product_price" name="product_price" value="{{price}}">      
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Descripción:</label>
+                            <textarea class="form-control" maxlength='1000' minlength='10' id="product_description" name="product_description" >{{description}}</textarea>                                
+                        </div>                
+                        <input type="file" id="foto" name="foto" style="display: none">                
+                    </br>
+                    </br>    
+                    <button type="submit" class="btn btn-primary btn-product-modificar" id="btn-modificar">Modificar</button>
+                    {% if messages %}
+
+                        {%for message in messages%}
+                            <div class="message">
+                                {{message}}
+                            </div>
+                        {% endfor %}
+    
+                    {% endif %}            
+                </div>
+            </div>    
+        </form>
+        
+    </div>
+   
+
+</div>
+
+{% load static %}<script  src="{% static 'js/scripts.js' %}"></script>
+
+<script>
+
+    const btn = document.getElementById('btn-modificar')
+
+    
+
+    btn.addEventListener('click', (e) =>{
+        const product_name = document.getElementById('product_name').value
+        const product_price = document.getElementById('product_price').value
+        const product_img = document.getElementById('foto').value
+        const product_description = document.getElementById('product_description').value
+        const foto_value = document.getElementById('foto').value
+        var extension = foto_value.split('.').pop()
+        
+        if(foto_value === ''){
+            extension = 'jpg'
+        }
+
+        if(product_name.trim() === '' || product_price.toString() === '' || product_description.trim() === ''){
+            e.preventDefault()
+            Swal.fire({
+                title: 'Error!',
+                text: 'No puedes dejar campos en blanco',
+                icon: 'error',
+                confirmButtonText: 'Entiendo'
+            }); 
+        }
+
+        if(extension != 'jpg' && extension != 'png' && extension != 'jpeg'){
+            e.preventDefault()
+            Swal.fire({
+                title: 'Error de formato!',
+                text: 'El archivo debe ser formato jpg, png o jpeg',
+                icon: 'error',
+                confirmButtonText: 'Entiendo'
+            });
+        }
+
+    })
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'layouts/layout.html' %}
+{% block title %}{{title}}{% endblock %}
+{% block content %}
+
+<div class="container-fluid container-create">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}  
+        <div class="mb-3">
+          <label class="form-label">Nombre producto:</label>
+          <input type="user" class="form-control" name="name" placeholder="Ingrese nombre del producto" id="name">      
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Precio:</label>
+          <input type="number" class="form-control" name="price" placeholder="Precio" id="price">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Imagen:</label>
+            <input type="file" class="form-control" id="ufile" name="ufile">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Descripción:</label>
+            <textarea class="form-control" maxlength='500' minlength='0' id="description" name="description"></textarea>                                
+        </div>  
+        <button type="submit" class="btn btn-primary btn-create" id="btn-crear">Crear Producto</button>
+        {% if messages %}
+            {% for message in messages %}
+                
+                <div class="message">
+                    <p>{{message}}</p>
+                </div>
+
+            {% endfor %}
+        {% endif %}
+    </form>
+    
+</div>
+
+
+<script>
+
+    const btn = document.getElementById('btn-crear')
+    
+
+    btn.addEventListener('click', (e) =>{
+        const product_name = document.getElementById('name').value
+        const product_price = document.getElementById('price').value
+        const product_img = document.getElementById('ufile').value
+        const product_description = document.getElementById('description').value
+        const foto_value = document.getElementById('ufile').value
+        const extension = foto_value.split('.').pop()
+        
+
+        if(product_name.trim() === '' || product_price.toString() === '' || product_img === '' || product_description.trim() === ''){
+            e.preventDefault()
+            Swal.fire({
+                title: 'Error!',
+                text: 'Debes completar los campos',
+                icon: 'error',
+                confirmButtonText: 'Entiendo'
+            }); 
+        }
+
+        if(extension != 'jpg' && extension != 'png' && extension != 'jpeg'){
+            e.preventDefault()
+            Swal.fire({
+                title: 'Error de formato!',
+                text: 'El archivo debe ser formato jpg, png o jpeg',
+                icon: 'error',
+                confirmButtonText: 'Entiendo'
+            });
+        }
+
+    })
+
+</script>
+
+
+
+{% endblock %}

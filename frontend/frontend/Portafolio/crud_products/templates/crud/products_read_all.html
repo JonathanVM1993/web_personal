@@ -1,0 +1,55 @@
+{% extends 'layouts/layout.html' %}
+{% block title %}{{title}}{% endblock %}
+{% block content %}    
+
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            {% for product in productos %}
+                <div class="swiper-slide">
+                    <div class="icons">
+                        <i class="fa-solid fa-circle-arrow-left"></i>
+                        
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-txt">
+                            <span>${{product.price}}</span>
+                            <h3>{{product.name}}</h3>
+                            <p>
+                                {{product.description}}
+                            </p>
+                        </div>
+                        <div class="product-img">
+                            {% load static %}<img src="{% static '' %}{{product.img}}">
+                        </div>
+                    </div>
+                    <a href="#" class="btn-1">Comprar</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+
+    var swiper = new Swiper(".mySwiper",{
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        loop: true,
+        coverflowEffect:{
+            depth:500,
+            modifer:1,
+            slidesShadows:true,
+            rotate:0,
+            stretch:0
+        }
+    })
+
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends 'layouts/layout.html' %}
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<div class="container-fluid container-login">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}  
+        <div class="mb-3">
+        <label class="form-label">Usuario:</label>
+        <input type="user" class="form-control" id="user" name="user" placeholder="Ingrese usuario" >      
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Nombre completo:</label>
+            <input type="user" class="form-control" id="first_name" name="first_name" placeholder="Ingrese nombre completo" >      
+        </div>
+        <div class="mb-3">
+        <label class="form-label">Correo:</label>
+        <input type="user" class="form-control" id="email" name="email" placeholder="Ingrese correo" >
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Linkedin:</label>
+            <input type="user" class="form-control" id="linkedin" name="linkedin" placeholder="https://www.linkedin.com/in/" >      
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Password:</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese contraseña" >
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Foto de Usuario:</label>
+            <input type="file" class="form-control" id="ufile" name="ufile" >
+        </div>
+        <button type="submit" class="btn btn-primary btn-login" id="btn-enviar">Registrar</button>
+
+        {% if messages %}
+
+            {% for message in messages%}
+
+                <div class="message">{{message}}</div>
+
+            {% endfor %}
+
+        {% endif %} 
+
+    </form>
+</div>
+
+<script>
+    const btn = document.getElementById('btn-enviar')
+
+    
+
+    btn.addEventListener('click', (e) => {        
+        const value_user = document.getElementById('user').value
+        const value_name = document.getElementById('first_name').value
+        const value_email = document.getElementById('email').value
+        const value_linkedin = document.getElementById('linkedin').value
+        const value_password = document.getElementById('password').value
+        const value_ufile = document.getElementById('ufile').value
+
+        const foto_value = document.getElementById('ufile').value
+        const extension = foto_value.split('.').pop()
+        var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+
+        if (value_user.trim() === '' || value_name.trim() === '' || value_email.trim() === '' || value_linkedin.trim() === '' || value_password.trim() === '' || value_ufile.trim() === ''){            
+            e.preventDefault()            
+            Swal.fire({
+                title: 'Error!',
+                text: 'Debes completar los campos',
+                icon: 'error',
+                confirmButtonText: 'Entiendo'
+            });            
+        }
+        else if (value_email.match(validRegex)){        
+            
+        } else {
+            e.preventDefault()
+            Swal.fire({
+                title: 'Error!',
+                text: 'Debes ingresar un correo valido',
+                icon: 'error',
+                confirmButtonText: 'Entiendo'
+            });  
+            
+        }
+
+        if(extension != 'jpg' && extension != 'png' && extension != 'jpeg'){
+            e.preventDefault()
+            alert(extension)
+            Swal.fire({
+                title: 'Error de formato!',
+                text: 'El archivo debe ser formato jpg, png o jpeg',
+                icon: 'error',
+                confirmButtonText: 'Entiendo'
+            });
+        }
+    });
+</script>
+
+
+
+
+{% endblock %}

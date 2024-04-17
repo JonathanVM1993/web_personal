@@ -1,0 +1,65 @@
+{% extends 'layouts/layout.html' %}
+{% block title %}{{title}}{% endblock %}
+{% block content %}
+
+<div class="container-fluid products-read">
+    <form action="{% url 'products_read' %}" method="POST" >
+    {% csrf_token %}
+    <div class="products-search" >
+        <div class="div-products-select"> 
+            <select class="form-select products-select" name="id">
+                
+                {% for product in productos%}
+
+                <option value="{{product.id}}">{{product.id}}-{{product.name}}</option>
+
+                {% endfor %}
+
+            </select>
+        </div>
+        
+        <div class="div-products-select-button">              
+
+
+                <button type="submit" class="btn btn-primary btn-products-read">Buscar producto</button>
+        
+        </div>
+
+    </div>
+    </form>
+
+    {% if search %}
+
+    <div class="parent-div-selected-product">
+        <div class="div-selected-product">
+            {% load static %}<img class="product-img" src="{% static '' %}{{selected.img}}">
+            <div class="div-info-product">
+                <p>SKU: {{selected.id}}
+                <p>Nombre producto: {{selected.name}}</p>                
+                <p>Precio: {{selected.price}}</p>
+                <p>Descripción: {{selected.description}}</P>
+            </div>      
+        
+        </div>
+    </div>
+
+    {% endif %}
+
+    {% if messages %}
+
+    {%for message in messages%}
+        <div class="message">
+            {{message}}
+        </div>
+    {% endfor %}
+
+{% endif %}
+
+</div>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends 'layouts/layout.html' %}
+{% block title %}{{title}}{% endblock %}
+{% block content %}
+
+<div class="container-fluid profile-update">
+
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %} 
+    <div class="profile-img-update">        
+        {% load static %}<img class="rounded-circle img-profile-update" src="{% static '' %}{{user_img}}" id="img" name="img" for="foto">
+        <label for="foto" class="profile-foto-file">Cambiar foto</label>
+    </div>
+
+    <div class="profile-info-update">        
+        <h1>Modificar mi perfil</h1>
+        <hr></hr>
+        <div class="container-fluid">             
+                <div class="mb-3">
+                    <label class="form-label">Nombre completo:</label>
+                    <input type="user" class="form-control" id="first_name" name="first_name" value="{{first_name}}">      
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Correo:</label>
+                    <input type="user" class="form-control" id="email" name="email" value="{{user_email}}">      
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Linkedin:</label>
+                    <input type="user" class="form-control" id="linkedin" name="linkedin" value="{{user_linkedin}}">      
+                </div>                
+                <input type="file" id="foto" name="foto" style="display: none">                
+            </br>
+            </br>    
+            <button type="submit" class="btn btn-primary btn-login" id="btn-modificar">Modificar</button>    
+            
+        {% if messages %}
+
+            {%for message in messages%}
+                <div class="message">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+        </div>
+    </div>    
+    
+</form>
+
+</div>
+
+<script>
+
+    const btn = document.getElementById('btn-modificar')
+
+    btn.addEventListener('click', (e)=>{
+        const name_value = document.getElementById('first_name').value
+        const correo_value = document.getElementById('email').value
+        const linkedin_value = document.getElementById('linkedin').value
+                
+        const foto_value = document.getElementById('foto').value
+        var extension = foto_value.split('.').pop()
+        
+        if(foto_value === ''){
+            extension = 'jpg'
+        }
+
+        if(name_value.trim() === '' || correo_value.trim() === '' || linkedin_value.trim() === ''){
+            e.preventDefault()
+            Swal.fire({
+                title: 'Error!',
+                text: 'No puedes dejar campos vacíos',
+                icon: 'error',
+                confirmButtonText: 'Entiendo'
+            });
+        }
+
+        
+
+        if(extension != 'jpg' && extension != 'png' && extension != 'jpeg'){
+            e.preventDefault()
+            Swal.fire({
+                title: 'Error de formato!',
+                text: 'El archivo debe ser formato jpg, png o jpeg',
+                icon: 'error',
+                confirmButtonText: 'Entiendo'
+            });
+        }
+
+    })
+
+</script>
+
+
+{% load static %}<script  src="{% static 'js/scripts.js' %}"></script>
+
+{% endblock %}

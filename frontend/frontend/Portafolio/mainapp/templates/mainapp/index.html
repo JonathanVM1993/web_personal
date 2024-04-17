@@ -1,0 +1,31 @@
+{% extends 'layouts/layout.html' %}
+
+{% block title %}{{title}}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-fluid personal">
+
+    <h1>Bienvenidos</h1>
+    <hr>
+</br>
+    <p>He desarrollado este sitio con el fin de mostrar mis conocimientos en <i class="fa-solid fa-laptop-code"></i> FrontEnd  y <i class="fa-solid fa-file-code"></i> Backend  de <i class="fa-solid fa-globe"></i>Programación Web .<p>
+
+    <p>El sitio cuenta con las siguientes secciones: </p>
+    
+    <p><i class="fa-solid fa-cart-shopping"></i> CRUD Productos: Creación <span class="badge bg-warning">POST</span>,
+        Obtención <span class="badge bg-success">GET</span>,
+        Modificación <span class="badge bg-primary">PUT</span> y 
+        Eliminación <span class="badge bg-danger">DELETE</span> de productos con API creada con <i class="fa-brands fa-python"> </i> Django Rest Framework</p>
+    <p><i class="fa-solid fa-book-open"></i> Registrarse: Registro de Usuario</p>
+    <p><i class="fa-solid fa-user"></i> Login: Identificación de usuario con autenticación mediante Token de <i class="fa-brands fa-python"> </i> Django Rest Framework</p>
+    <p>¡Son más que bienvenidos a probar la sección de Usuario, registrandose, logueando y además modificando su propio perfil!</p>
+    <hr>
+    <h1>Tecnologías utilizadas</h1>
+    <p>FrontEnd: <i class="fa-brands fa-python"> </i> Framework Django, <i class="fa-brands fa-html5"></i> HTML5, <i class="fa-brands fa-css3"></i> CSS, <i class="fa-brands fa-bootstrap"></i> Bootstrap5 y <i class="fa-brands fa-js"></i> Javascript</p>
+    <p>Backend: <i class="fa-brands fa-python"> </i> Django Rest Framework</p>  
+</div>
+
+{% endblock%}

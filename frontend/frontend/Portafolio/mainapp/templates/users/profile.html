@@ -1,0 +1,19 @@
+{% extends 'layouts/layout.html' %}
+{% block title %}{{title}}{% endblock %}
+{% block content %}
+
+<div class="container-fluid profile">
+    <div class="profile-img">
+        {% load static %}<img class="rounded-circle img-profile" width="80" height="80" src="{% static '' %}{{user_img}}">
+    </div>
+
+    <div class="profile-info">
+
+    <h1>Mi perfil</h1>
+    <hr></hr>
+    <p>Nombre: {{first_name|title}}<p>
+    <p>Correo: {{user_email}}<p>
+    <p>Linkedin: <a href="{{user_linkedin}}">{{user_linkedin}}</a><p>
+    </div>
+</div>
+{% endblock %}

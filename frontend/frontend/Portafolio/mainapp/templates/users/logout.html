@@ -1,0 +1,16 @@
+{% extends 'layouts/layout.html' %}
+
+{% block content %}
+
+<script>
+
+    localStorage.setItem('logged_in', 'False')
+    localStorage.setItem('token', '')
+    document.cookie = "bandera=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+    const token = localStorage.getItem('token')
+    
+
+</script>
+
+{% endblock %}

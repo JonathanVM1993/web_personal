@@ -1,0 +1,74 @@
+{% extends 'layouts/layout.html' %}
+{% block title %}{{title}}{% endblock %}
+{% block content %}
+<div class="container-fluid container-login">
+<form method="POST">
+    {% csrf_token %}  
+    <div class="mb-3">
+      <label  class="form-label">Usuario:</label>
+      <input type="user" class="form-control" id="username" name="username" placeholder="Ingrese usuario">      
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Contraseña:</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese contraseña">
+    </br>
+      <a href="{% url 'recover_password' %}">Recuperar contraseña</a>
+    </div>
+    <button type="submit" class="btn btn-primary btn-login" id="btn-login">Login</button>
+</form>
+
+<div class="message-class">
+  {% if messages %}
+  
+      {% for message in messages%}
+  
+          <div class="message">{{message}}</div>
+  
+      {% endfor %}
+  
+  {% endif %}
+</div>
+
+
+</div>
+
+
+
+<script>
+
+    let logged_in = "{{logged_in}}"
+    
+    if({{"logged_in"}}=="True"){
+        const token = "{{token}}"
+        localStorage.setItem('token', token)
+        localStorage.setItem('logged_in', "True")
+        location.href='https://www.jvarasm.com/inicio/'
+    }
+    else{
+        localStorage.setItem('logged_in', "False")
+    }
+        
+    const btn = document.getElementById('btn-login')    
+
+    btn.addEventListener('click', (e) =>{
+      const username_value = document.getElementById('username').value
+      const password_value = document.getElementById('password').value     
+
+      if (username_value.trim() === '' || password_value.trim() ===''){
+          e.preventDefault()
+          Swal.fire({
+            title: 'Error!',
+            text: 'Debes completar los campos',
+            icon: 'error',
+            confirmButtonText: 'Entiendo'
+        });  
+      }
+    });
+
+
+    
+    
+</script>
+
+
+{% endblock %}

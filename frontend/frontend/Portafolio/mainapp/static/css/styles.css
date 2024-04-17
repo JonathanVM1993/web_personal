@@ -1,0 +1,1021 @@
+:root {   box-sizing: border-box; }  *, ::before, ::after {   box-sizing: inherit; }
+
+.video{
+    position: fixed;        
+    top:0;
+    z-index: -1;    
+    width: auto;
+    object-fit: cover;    
+    height: 100%;
+    object-position: center;
+    display: block;
+    left: -50%;
+    transform: translateX(-29%);
+    transition: all 300ms ease-in-out;
+}
+
+.login-recruit{
+    background-color: #1e1e1e;
+}
+
+.log-recruit {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 990px){
+
+    .log-recruit h1{
+        font-size: 4rem;
+    }
+
+    .log-recruit label{
+        font-size: 2.2rem;
+    }
+
+    .log-recruit{
+        margin-top: 350px;
+    }
+}
+
+.error p{
+    color: white;
+}
+
+.message{
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 5px;
+}
+
+@media only screen and (max-width: 990px){
+    .message{
+        font-weight: 600;
+        font-size: 2.5rem;
+        color: white;
+        margin-top: 5px;
+    }
+}
+
+
+
+li {
+    list-style: none;
+    text-decoration: none;
+}
+
+nav {
+    display: inline-block;
+    background: transparent;
+    width: auto;
+    font-weight: 500;
+}
+
+ul > li > ul{
+    margin-right: 50px;
+}
+
+ul > li > ul {
+    display: none;     
+}
+
+ul > li:hover > ul {
+    display: block;
+    position: absolute;
+    background: transparent;
+    width: 160px;    
+}
+
+
+.nav-item ul{
+    padding-left: 0;
+}
+
+.div-login ul{
+    padding-left: 0;
+} 
+
+ul > li > ul > li > a{
+    display: block;
+    color: rgb(255, 255, 255);    
+    background: transparent;
+    text-decoration: none;
+    float:left;          
+}
+
+ul > li > ul > li:hover > a{    
+    color: #0D9276;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+ul > li > ul{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 1px;
+}
+
+
+.navbar-nav{
+    gap: 50px;
+    height: 70px;
+    width: 100%;
+    align-items: center;
+}
+
+.nav-links {
+    display: block;
+    color: #FFF6E9;
+    text-decoration: none;
+    background: 0 0;
+    border: 0;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+.nav-links:hover{
+    color: #0D9276;
+}
+
+.nav-login{
+    text-align: right;
+}
+
+@media only screen and (max-width:990px){
+
+    ul > li:hover > ul {
+        display: flex;        
+        background: transparent;
+        width: 400px;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 50px;
+        position: relative;        
+        }
+
+    .container-nav {
+        align-items: center;
+        justify-content: left;
+    }
+
+    .navbar-nav{
+        background: rgb(0 0 0 / 50%);
+        align-items: flex-start;
+        height: auto;
+        gap: 5px;
+        font-size: 2.3rem;
+        padding: 20px 0px 20px 20px;
+        border-radius: 15px;
+    }   
+    
+}
+
+/*
+
+ESTILOS INDEX
+
+*/
+
+.personal p, h1,h2,h3 {
+    color: white;
+    text-align: center;
+}
+
+.personal hr{
+    color: white;
+    opacity: 0.25;
+}
+
+.personal{
+    width: 800px;
+}
+
+.badge bg-secondary{
+    background-color: #C4C4C4;
+}
+
+@media only screen and (max-width:990px){
+    .personal{
+        margin-top: 150px;
+        height: 800px;
+        width: auto;       
+    }
+    
+    .personal p{
+        font-size: 2.1rem;    
+    }
+
+    .personal h1{
+        font-size: 4rem;
+    }
+}
+
+/*
+FIN ESTILOS INDEX
+*/
+
+
+
+@media only screen and (min-width:768px) {
+    .video{
+        left: 0;
+        transform: unset;
+        width: 100%;
+    }
+}
+
+/*
+ESTILO LOGIN USUARIO
+*/
+
+.login{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form-label{
+    color:white;
+}
+
+.form-control{
+    width: 331px;
+}
+
+.container-login{
+    margin-top: 120px;
+    margin-left: 400px;
+    width: auto;
+}
+
+.img-perfil{    
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-top: 2px solid rgb(21, 95, 192);
+    border-bottom: 2px solid rgb(118, 20, 148);
+}
+
+@media only screen and (max-width:990px){
+    .login{
+        display:flex;
+        justify-content: flex-start;
+    }
+    .img-perfil{
+        margin-left: 0px;
+        margin-top: 10px;   
+        width: 130px;
+        height: 130px;
+    }
+
+}
+
+.div-login{    
+    margin-right: 90px;
+    margin-top: 20px;
+}
+
+@media only screen and (max-width:990px){
+
+    .div-login{    
+        margin-right: 0px;
+        margin-top: 0px;
+    }
+
+    .container-login{
+        margin-top: 300px;
+        margin-left: 0px;
+        width: 100%;
+    }
+
+    .container-login .form-label{
+        font-size: 3.2rem;
+    }
+
+    .container-login input{
+        width: 100%;
+    }
+
+    .container-login a{
+        font-size: 2.7rem;
+    }
+
+    .btn-login{
+        height: 75px;
+        width: 100%;
+        font-size: 2.5rem;
+    }
+
+    .img-perfil{
+        margin-left: 0px;
+    }
+
+}
+
+/* FIN ESTILO LOGIN USUARIO */
+
+/* INICIO ESTILOS LOGOUT */
+
+.logout{
+    height: 300px;
+    width: 300px;
+    float: left;
+}
+
+/* FIN ESTILOS LOGOUT */
+
+
+
+/* ESTILOS LEER TODOS LOS PRODUCTOS */
+
+.container-productos p{
+    color:white;
+}
+
+/* FIN ESTILOS LEER TODOS LOS PRODUCTOS */
+
+/* ESTILOS PAGINA DEL PERFIL DEL USUARIO */
+
+.profile{
+    height: 800px;
+    width: 1000px;    
+    color: white;    
+}
+
+.img-profile{    
+    float: left;
+    margin-top: 200px;
+    width: 250px;
+    height: 250px;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, .1);
+    object-fit: cover;
+    border-top: 3px solid rgb(33, 114, 219);    
+    border-bottom: 3px solid rgb(118, 20, 148);
+}
+
+.img-profile:hover{    
+    transform: scale(1.3);
+    z-index: 2;
+    transition: 1s;
+}
+
+.profile-info{
+    margin-top: 190px;
+    margin-left: 80px;
+    width: 600px;
+    height: 500px;    
+    float: left;    
+}
+
+.profile-info h1, h2, h3, p{
+    text-align: left;
+}
+
+@media only screen and (max-width: 990px){
+    .profile{
+        width: 100%;
+        height: 1000px;
+    }
+
+    .profile-info{
+        margin-left: 0px;
+        margin-top: 60px;
+    }
+
+    .profile-info h1{
+        font-size: 5rem;
+    }
+
+    .profile-info p{
+        font-size: 3rem;
+    }
+
+    .img-profile{
+        margin-left: 0px;
+        margin-top: 0px;
+        width: 350px;
+        height: 350px;
+    }
+
+    .profile-img{
+        width: 100%;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        margin-top: 200px;
+    }
+}
+
+
+/* FIN ESTILOS PAGINA DEL PERFIL DEL USUARIO */
+
+/* INICIO ESTILOS PAGINA UPDATE PERFIL */
+
+.profile-img-update{
+    height: 330px;
+    width: 270px;
+    margin-top: 250px;    
+    float: left;
+}
+
+
+/* BOTÓN */
+.profile-foto-file{
+    background-color: black;    
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    margin-top: 15px;
+    margin-left: 65px;
+}
+
+.profile-foto-file:hover{
+    background-color: rgb(37, 36, 36);
+    cursor: pointer;
+    transition: 150ms;
+}
+
+.profile-info-update{
+    margin-top: 190px;
+    margin-left: 10px;
+    width: 600px;
+    height: 500px;    
+    float: left;
+}
+
+.profile-info-update h1, h2, h3, p{
+    text-align: left;
+}
+
+.profile-update{
+    height: 800px;
+    width: 1000px;    
+    color: white;
+    
+}
+
+.img-profile-update{    
+    float: left;
+    margin-top: 10px;
+    width: 250px;
+    height: 250px;   
+    object-fit: cover;
+    border-top: 3px solid rgb(33, 114, 219);    
+    border-bottom: 3px solid rgb(118, 20, 148);
+
+}
+
+@media only screen and (max-width:990px){
+    .profile-update{
+        width: 100%;
+        height: 1200px;
+        display: flex;
+    }
+
+    .profile-img-update {
+        height: 330px;
+        width: 270px;
+        float: left;
+        margin-top: 15px;
+    }
+
+    .profile-img-update {
+        height: 330px;
+        width: 100%;        
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-info-update {
+        margin-top: 80px;
+        margin-left: 0px;
+        width: 100%;
+        height: 500px;
+        float: left;
+    }
+
+    .profile-info-update h1{
+        font-size: 4rem;
+    }
+
+    .profile-info-update label{
+        font-size: 2.1rem;
+    }
+
+    .profile-info-update input{
+        width: 100%;        
+    }
+    
+}
+
+/* FIN ESTILOS PAGINA UPDATE PERFIL */
+
+/* ESTILOS CRUD CREATE*/
+
+.container-create{
+    margin-top: 200px;
+    margin-left: 400px;
+    width: auto;
+}
+
+@media only screen and (max-width:990px){
+    .container-create{
+        margin-top: 400px;
+        margin-left: 0px;
+        height: 1000px;
+
+    }
+
+    .container-create label{
+        font-size: 2.5rem;
+    }    
+
+    .container-create input{
+        width: 100%;
+        height: 50px;
+        font-size: 2rem;
+    }
+
+    .form-control{
+        font-size: 2rem;
+    }
+
+    .container-create textarea{
+        width: 100%;
+        height: 150px;
+    }
+
+    .btn-create{
+        margin-top: 50px;
+        width: 100%;
+        height: 75px;
+        font-size: 2rem;
+    }
+}
+
+/* FIN ESTILOS CREATE */
+
+
+/* ESTILOS CRUD PRODUCTOS: READ ONE*/
+
+.products-read{
+    height: 800px;
+    width: 800px;
+    
+}
+
+.products-select{
+    width: 300px;
+    float:left;
+    margin-left: 85px;
+}
+
+.products-search{
+    height: 60px;
+    
+}
+
+.div-products-select-button{
+    margin-left: 100px;
+    float:left;
+}
+
+.parent-div-selected-product{
+    height: 700px;
+    width: 774px;    
+    display:flex;
+    align-items: center;
+    justify-content : center;
+}
+
+.parent-div-selected-product p{
+    color: white;
+}
+
+.div-selected-product{
+    height: 600px;
+    width: 600px;       
+}
+
+.div-selected-product img{
+    float: left;
+    height: 400px;
+    width: 250px;
+    border-radius: 20px;
+    object-fit: 100%;
+}
+
+.div-info-product{
+    
+    height: 400px;
+    width: 300px;
+    float: left;
+    margin-left: 30px;    
+}
+
+@media only screen and (max-width: 990px){
+    .products-read{
+        margin-top: 150px;
+        height: 1900px;
+        width: 100%;
+    }
+
+    .products-read p{
+        font-size: 1rem;
+    }
+
+    .products-search select{
+        font-size: 1.3rem;
+        margin-left: 0px;
+    }
+
+    .products-select{
+        height: 80px;
+        width: 100%;
+    }
+    
+    .btn-products-read{
+        height: 70px;
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 10px;
+        float:left;
+        font-size: 1.8rem;
+    }
+
+    .div-products-select-button{
+        margin-left: 0px;
+        width: 100%;
+    }
+
+    .parent-div-selected-product{
+        width: 100%;
+        height: 1200px;
+        margin-top: 0px;
+        align-items: flex-start;
+    }
+
+    .parent-div-selected-product img{
+        height: 600px;
+        width: 600px;
+        margin-top: 20px;
+    }
+
+    .div-info-product{
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 20px;
+    }
+
+    .div-info-product p{
+        font-size: 2rem;
+    }
+
+
+}
+
+/*
+CENTRAR DIVS
+display:flex;
+align-items: center;
+justify-content : center;
+
+*/
+
+
+/* FIN ESTILOS CRUD PRODUCTOS: READ ONE*/
+
+
+/* -------   */
+
+.swiper-slide:hover {
+    background-color: #1e1e1e;
+
+}
+
+
+/*
+
+/* SLIDER */
+
+.swiper{    
+    padding: 120px 0px 77px 0px;    
+    width: 1100px;
+}
+
+.swiper-3d {
+    perspective: 700px;
+}
+
+.swiper-slide{
+    width: 500px;
+    height: 600px;
+    background: linear-gradient( 360deg,#7B1B40 0%, #45385C 29%, #0F406B 100%);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+/*background-color: #323232; */
+
+.icons{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.icons i{
+    font-size: 20px;
+    color: #CC6282;
+}
+
+.icons img{
+    width: 120px;
+}
+
+.logo{
+    width: 120px;
+}
+
+.product-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-txt{
+    flex-basis: 50%;
+    text-align: left;
+}
+
+.product-txt span{
+    font-size: 25px;
+    color: #CC6282;
+    font-weight: bold;
+}
+
+.product-txt h3{
+    font-size: 20px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.product-txt p{
+    font-size: 14px;
+    color: #C4C4C4;
+}
+
+.product-img{
+    flex-basis: 60%;
+    text-align: right;
+}
+
+.product-img img{
+    width: 140px;
+    height: 180px;
+    object-fit: 100%;
+    border-radius: 20px;
+}
+
+.btn-1{
+    display: inline-block;
+    padding: 13px 55px;
+    border: 1px solid #5C9BB0;
+    border-radius: 25px;
+    color: #5C9BB0;
+    text-decoration: none;
+    margin-top: 50px;
+}
+
+.btn-1:hover{
+    background-color: aliceblue;
+    opacity: 0.4;
+    transition: 300ms;
+}
+
+
+.swiper-slide:hover {
+    background-color: #1e1e1e;
+}
+
+@media only screen and (max-width: 990px){
+    .swiper{
+        width: 750px;
+        margin-top: 300px;
+        height: 1200px;
+    }
+
+    .swiper-slide{
+        height: 1000px;
+    }
+    
+    .product-txt span{
+        font-size: 50px;
+    }
+
+    .product-txt h3{
+        font-size: 34px;
+    }
+
+    .product-txt p{
+        font-size: 24px;
+    }
+
+    .product-img{
+        height: 600px;
+    }
+
+    .product-img img{
+        width: 250px;
+        height: 480px;
+        object-fit: 100%;
+        border-radius: 20px;
+        margin-top: 80px;
+    }
+
+}
+
+
+/* FIN SLIDER */
+
+/* INICIO TABLA MODIFICAR */
+
+@media only screen and (max-width: 990px){
+
+    .all-products{
+        margin-top: 300px;
+    }
+
+    .table-dark{
+        font-size: 1.4rem;
+    }
+}
+
+/* FIN TABLA MODIFICAR */
+
+
+/* INICIO PRODUCT UPDATE */
+
+.products-update{
+    height: 800px;
+    width: 900px;
+    
+    color: white;
+}
+
+.products-update-form{
+    height: 800px;
+    width: 850px;
+    
+}
+
+.product-update-img{
+    height: 430px;
+    width: 300px;
+    
+    float:left;
+    margin-top: 150px;
+}
+
+.product-update-img img{
+    height: 350px;
+    border-radius: 20px;
+}
+
+.product-update-info{
+    height: 500px;
+    width: 450px;
+    float: left;
+    
+    margin-top: 150px;
+}
+
+@media only screen and (max-width: 990px){
+
+    .products-update{
+        width: 100%;
+        height: 1900px;
+        display: flex;
+        align-items: center;
+    }
+
+    .products-update-form{
+        width: 100%;
+        height: 1800px;        
+    }
+
+    .product-update-info{
+        width: 100%;
+        height: 900px;
+    }
+
+    .product-update-info h1{
+        font-size: 3.2rem;
+    }
+
+    .product-update-info label{
+        font-size: 2.5rem;
+    }
+
+    .product-update-info-container input, textarea.form-control{
+        width: 100%;
+    }
+
+    .btn-product-modificar{
+        height: 90px;
+        width: 100%;
+        font-size: 2rem;
+    }
+    
+    .product-update-img{
+        width: 100%;
+        height: 800px;
+        margin-top: 0px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;        
+    }
+
+    .product-update-img img{
+        height: 800px;
+        width: 600px;
+    }
+
+    .profile-foto-file{
+        margin-left: 0px;
+        font-size: 2rem;
+    }
+
+}
+
+/* FIN PRODUCT UPDATE */
+
+/* INICIO PRODUCTOS UPDATE */
+
+.table-dark {
+    background-color: white;
+}
+
+
+
+
+
+
+/* FIN PRODUCTOS UPDATE */
+
+/* INICIO RECOVER PASSWORD */
+
+.recover{
+    height: 500px;
+    width: 800px;    
+}
+
+.recover-form{
+    height: 210px;
+    width: 500px;
+    
+    margin-left: 180px;
+    margin-top: 240px;
+    
+}
+
+.recover-button{
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 990px){
+    .recover{
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .recover input{
+        width: 100%;
+    }
+
+    .recover-form{
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .recover-form label{
+        font-size: 2.5rem;
+    }
+
+    .recover-button{
+        width: 100%;
+        font-size: 2rem;
+        margin-top: 50px
+    }
+}
+
+
+/* FIN RECOVER PASSWORD */
+

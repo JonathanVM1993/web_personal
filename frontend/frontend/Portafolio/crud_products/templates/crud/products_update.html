@@ -1,0 +1,40 @@
+{% extends 'layouts/layout.html' %}
+
+{% block title %}{{title}}{% endblock %}
+{% block content %}
+
+<div class="container-fluid all-products">
+
+    <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Descripción</th>            
+            <th scope="col">Modificar</th>    
+          </tr>
+        </thead>
+        <tbody>
+        {% for product in productos%}        
+            <tr>
+              <form method="POST" action="{% url 'product_updating' product.id %}">
+              {% csrf_token %}
+              <th scope="row">{{product.id}}</th>
+              <td>{{product.name}}</td>
+              <td>{{product.price}}</td>
+              <td>{{product.description}}</td>              
+              <td>                
+                <button type="submit" class="btn btn-primary">Modificar</button>
+              </form>
+              </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        
+      </table>
+<div>
+
+
+
+{% endblock %}

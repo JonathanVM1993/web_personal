@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-igb-&jx=)#qw4rw3#^yk48w)@#wf-6lj(%2145o_%#^nlz(85_'
+SECRET_KEY = '***********'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -92,9 +92,9 @@ DATABASES = {
 DATABASES = {
     'default':{
         'ENGINE':'django.db.backends.mysql',
-        'NAME':'i9841613_kh8p1',
-        'USER': 'kden4l99rxr9',
-        'PASSWORD': 'True1234trust1234!',
+        'NAME':'*******',
+        'USER': '*********',
+        'PASSWORD': '********',
         'HOST': 'localhost',
         'PORT': 3306
     }
@@ -160,6 +160,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  # Replace with yo
 EMAIL_PORT = 465  # Replace with your email port
 EMAIL_USE_SSL = True
 #EMAIL_USE_TLS = True  # Set to False if your email server doesn't use TLS
-EMAIL_HOST = 'mail.jvarasm.com'  # Replace with your email host for gmail -> 'smtp.gmail.com'
-EMAIL_HOST_USER = 'jvarasdev@jvarasm.com'  # Replace with your email username
-EMAIL_HOST_PASSWORD = 'True1234trust1234!'  # Replace with your email password
+EMAIL_HOST = '*******'  # Replace with your email host for gmail -> 'smtp.gmail.com'
+EMAIL_HOST_USER = '*******'  # Replace with your email username
+EMAIL_HOST_PASSWORD = '*******'  # Replace with your email password
